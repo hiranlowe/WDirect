@@ -12,22 +12,22 @@
 
     <Button
         android:id="@+id/onOff"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="137dp"
+        android:layout_height="62dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="54dp"
-        android:layout_marginTop="286dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="269dp"
         android:text="Wifi On" />
 
     <Button
         android:id="@+id/discover"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="137dp"
+        android:layout_height="62dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="286dp"
-        android:layout_marginEnd="54dp"
+        android:layout_marginTop="271dp"
+        android:layout_marginEnd="40dp"
         android:text="discover" />
 
     <ListView
@@ -42,6 +42,7 @@
         android:layout_marginTop="376dp"
         android:layout_marginEnd="-1dp" />
 
+
     <TextView
         android:id="@+id/connectionStatus"
         android:layout_width="match_parent"
@@ -49,14 +50,13 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="-1dp"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="343dp"
         android:text="Connection Status"
         android:textAlignment="center"
         android:textColor="@color/teal_200"
         android:textSize="20sp"
         android:textStyle="bold" />
-
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/imageView"
@@ -65,8 +65,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="10dp"
         android:src="@drawable/cover2" />
 
 
