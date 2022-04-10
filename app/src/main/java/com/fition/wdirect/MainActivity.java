@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.FragmentManager;
 
 import android.Manifest;
 import android.content.BroadcastReceiver;
@@ -43,7 +42,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     Button btnOnOff, btnDiscover;
     ListView listView;
-    TextView  connectionStatus;
+    TextView connectionStatus;
 
     WifiManager wifiManager;
     WifiP2pManager mManager;
@@ -58,22 +57,33 @@ public class MainActivity extends AppCompatActivity {
 
     Server server;
     Client client;
-
+    
     public static final int PORT = 3568;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        if(getSupportActionBar()!=null){
+        if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
+
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        boolean previouslyStarted = prefs.getBoolean(getString(R.string.pref_previously_started), false);
+        if (!previouslyStarted) {
+            SharedPreferences.Editor edit = prefs.edit();
+            edit.putBoolean(getString(R.string.pref_previously_started), Boolean.TRUE);
+            edit.commit();
+            startActivity(new Intent(this, WelcomeActivity.class));
+            finish();
+        }
 
         getPermissions();
         initialWork();
         exqListener();
+
+
     }
 
     public class Server extends Thread {
@@ -242,6 +252,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+
     WifiP2pManager.ConnectionInfoListener connectionInfoListener = new WifiP2pManager.ConnectionInfoListener() {
         @Override
         public void onConnectionInfoAvailable(WifiP2pInfo wifiP2pInfo) {
@@ -259,11 +270,13 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+
     @Override
     protected void onResume() {
         super.onResume();
         registerReceiver(mReceiver, mIntentFilter);
     }
+
 
     @Override
     protected void onPause() {

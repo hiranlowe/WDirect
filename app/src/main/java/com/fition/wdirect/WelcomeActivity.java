@@ -14,12 +14,15 @@ public class WelcomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcome);
-
+        if(getSupportActionBar()!=null){
+            getSupportActionBar().hide();
+        }
         btnContinue = (Button) findViewById(R.id.btnContinue);
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
+                finish();
 
             }
         });
