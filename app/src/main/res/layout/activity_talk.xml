@@ -8,27 +8,39 @@
 
     <Button
         android:id="@+id/start_talking"
-        android:layout_width="134dp"
-        android:layout_height="136dp"
+        android:layout_width="169dp"
+        android:layout_height="169dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="102dp"
+        android:layout_marginBottom="140dp"
         android:background="@drawable/rounded_button"
         android:text="TALK"
-        android:textSize="20sp"
+        android:textSize="28sp"
         app:icon="@android:drawable/ic_btn_speak_now" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="384dp"
-        android:layout_height="243dp"
+        android:layout_width="398dp"
+        android:layout_height="286dp"
+        android:layout_above="@+id/start_talking"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="13dp"
-        app:srcCompat="@drawable/cover" />
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="61dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="75dp"
+        app:srcCompat="@drawable/cover1" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="116dp"
+        android:layout_height="185dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-44dp"
+        android:alpha="0.4"
+        app:srcCompat="@drawable/wdirect_cover" />
 
 
 </RelativeLayout>
