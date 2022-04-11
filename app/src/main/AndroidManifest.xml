@@ -20,15 +20,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WDirect" >
-        <activity
-            android:name=".PeerActivity"
-            android:exported="false" />
-        <activity
-            android:name=".WelcomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".OnboardingActivity"
-            android:exported="false" />
 
         <service
             android:name=".AudioStreamingService"
